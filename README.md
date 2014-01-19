@@ -3,7 +3,7 @@ Groovy Samples
 
 This repository contains some [*Groovy*][groovy] samples:
 
-   * [groovy-java-mix-sample](groovy-java-mix-sample) - Sample project that has mixed Java and Groovy source code and unit test and uses the `groovy-eclipse-compiler` to cimpile the ocde.
+   * [groovy-java-mix-sample](groovy-java-mix-sample) - Sample project that has mixed Java and Groovy source code and unit test and uses the `groovy-eclipse-compiler` to compile the ocde.
 
 ## Cloning
 
