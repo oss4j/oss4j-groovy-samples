@@ -1,0 +1,4 @@
+rootProject.name = "oss4j-groovy-samples"
+
+include "groovy-java-mix-sample"
+include "groovy-java-mix-gmaven-sample"

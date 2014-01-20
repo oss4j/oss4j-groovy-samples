@@ -2,10 +2,13 @@
 
 # Package Files #
 *.jar
+!gradle/wrapper/*.jar
 *.war
 *.ear
 
+build/
 target/
 .settings/
+.gradle/
 .classpath
 .project
