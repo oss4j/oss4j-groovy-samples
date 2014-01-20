@@ -4,6 +4,7 @@ Groovy Samples
 This repository contains some [*Groovy*][groovy] samples:
 
    * [groovy-java-mix-sample](groovy-java-mix-sample) - sample project that has mixed Java and Groovy source code and junit test and uses the `groovy-eclipse-compiler` to compile the code.
+   * [groovy-java-mix-gmaven-sample](groovy-java-mix-gmaven-sample) - sample project that has mixed Java and Groovy source code and junit test and uses the `gmaven` plugin to compile the code.
 
 ## Cloning
 
