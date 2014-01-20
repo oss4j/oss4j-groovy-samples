@@ -44,6 +44,7 @@ limitations under the License.
     <build-helper-maven-plugin.version>1.5</build-helper-maven-plugin.version>
     <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
     <lifecycle-mapping-plugin.version>1.0.0</lifecycle-mapping-plugin.version>
+    <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -94,6 +95,11 @@ limitations under the License.
           <groupId>org.codehaus.gmaven</groupId>
           <artifactId>gmaven-plugin</artifactId>
           <version>${gmaven.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>${maven-eclipse-plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.m2e</groupId>

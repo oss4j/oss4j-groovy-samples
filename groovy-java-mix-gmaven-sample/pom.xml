@@ -24,9 +24,9 @@ limitations under the License.
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
-  <artifactId>groovy-java-mix-sample</artifactId>
-  <name>OSS4J :: Samples :: Groovy ::  Groovy &amp;amp; Java Mix Sample</name>
-  <description>Sample project that has mixed Java and Groovy source and unit test</description>
+  <artifactId>groovy-java-mix-gmaven-sample</artifactId>
+  <name>OSS4J :: Samples :: Groovy ::  Groovy &amp;amp; Java Mix (Gmaven) Sample</name>
+  <description>Sample project that has mixed Java and Groovy source and unit test using the gmaven plugin.</description>
 
   <dependencies>
     <dependency>
@@ -47,30 +47,64 @@ limitations under the License.
 
   <build>
     <plugins>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <!-- Using Non-Javac Compilers http://maven.apache.org/plugins/maven-compiler-plugin/non-javac-compilers.html -->
-          <compilerId>groovy-eclipse-compiler</compilerId>
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
           <debug>${maven.compiler.debug}</debug>
           <encoding>${maven.compiler.encoding}</encoding>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.gmaven</groupId>
+        <artifactId>gmaven-plugin</artifactId>
         <dependencies>
           <dependency>
             <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-eclipse-compiler</artifactId>
-            <version>${groovy-eclipse-compiler.version}</version>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.codehaus.gmaven.runtime</groupId>
+            <artifactId>gmaven-runtime-2.0</artifactId>
+            <version>${gmaven.version}</version>
+            <exclusions>
+              <exclusion>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+              </exclusion>
+            </exclusions>
           </dependency>
         </dependencies>
+        <executions>
+          <execution>
+            <configuration>
+              <source />
+              <providerSelection>${gmaven.provider.selection}</providerSelection>
+              <sourceEncoding>UTF-8</sourceEncoding>
+            </configuration>
+            <goals>
+              <goal>generateStubs</goal>
+              <goal>compile</goal>
+              <goal>generateTestStubs</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.groovy</groupId>
-        <artifactId>groovy-eclipse-compiler</artifactId>
-        <extensions>true</extensions>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <additionalProjectnatures>
+            <projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
+          </additionalProjectnatures>
+          <sourceIncludes>
+            <sourceInclude>**/*.groovy</sourceInclude>
+          </sourceIncludes>
+        </configuration>
       </plugin>
     </plugins>
   </build>

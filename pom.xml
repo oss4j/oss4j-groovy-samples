@@ -67,5 +67,6 @@ limitations under the License.
   <modules>
     <module>parent</module>
     <module>groovy-java-mix-sample</module>
+    <module>groovy-java-mix-gmaven-sample</module>
   </modules>
 </project>
